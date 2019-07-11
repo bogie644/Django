@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8">
+    {% block title %}
+    {% endblock %}
+
+    {% block css%}
+    {% endblock %}
+
+
+</head>
+<body>
+ <div class="container">
+     {% include 'mainapp/includes/inc_menu.html' %}
+     {% block content %}
+     {% endblock %}
+
+     {% block js %}
+     {% endblock %}
+
+     <div class="footer">
+         <h5>Все права защищены &copy; 2019</h5>
+     </div>
+ </div>
+</body>
+</html>
