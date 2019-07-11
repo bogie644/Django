@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
 
-<head>
-   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <meta charset="UTF-8">
+
+        {% block title %}
     <title>Каталог</title>
-</head>
+{% endblock %}
 
-<body>
-<div class="container">
-    <div class="header">
-        <div class="logo"></div>
-        <div class="b_menu">
-            <ul class="menu">
-                <li>МЕНЮ</li>
-                <li><a href="/">Главная</a></li>
-                <li><a href="/catalog/">Каталог</a></li>
-                <li><a href="/contact/">Контакты</a></li>
-            </ul>
-        </div>
-    </div>
+{% block content %}
     <div class="catalog">
     <h2>Каталог</h2> 
     <div class="molly">
@@ -35,8 +21,5 @@
          <a href="/pecilia/">Пецилия красная</a>
     </div>
     </div>
-    <div class="footer">
-        <h5>Все права защищены &copy; 2019</h5> </div>
-</div>
-</body>
-</html>
+
+{% endblock %}

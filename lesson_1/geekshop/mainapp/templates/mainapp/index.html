@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
- <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <meta charset="UTF-8">
-    <title>Главная</title>
-   
-</head>
-<body>
-   <div class="container">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="b_menu">
-                <ul class="menu">
-                    <li>МЕНЮ</li>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/catalog/">Каталог</a></li>
-                    <li><a href="/contact/">Контакты</a></li>
-                </ul>
-            </div>   
-        </div>   
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+<title>Главная</title>
+{% endblock %}
+
+
+       {% block content %}
         <div class="welcom">
+            <p>{% now "jS F Y" %}</p>
             <h1>Интернет-магазин АкваФиш</h1>
-            <p>Мы рады приветствовать Вас, на сайте нашего интернет-магазина. Мы откроем Вам красочный подводный мир!</p>
+            <p>Мы рады приветствовать Вас, {{ username|title }}, на сайте нашего интернет-магазина. Мы откроем Вам красочный подводный мир!</p>
             </div>
+
+{% endblock %}
         
-        <div class="footer">
-            <h5>Все права защищены &copy; 2019</h5>
-        </div>
-    </div>
-</body>
-</html>

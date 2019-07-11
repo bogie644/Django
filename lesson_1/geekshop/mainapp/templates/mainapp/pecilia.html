@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends 'mainapp/base.html' %}
 
-<head>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <meta charset="UTF-8">
+
+        {% block title %}
     <title>Интернет-магазин AqvaFish</title>
-</head>
+{% endblock %}
 
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="logo"></div>
-            <div class="b_menu">
-                <ul class="menu">
-                    <li>МЕНЮ</li>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/catalog/">Каталог</a></li>
-                    <li><a href="/contact/">Контакты</a></li>
-                </ul>
-            </div>
-        </div>
+{% block content %}
         <h1>Пецилия красная</h1>
         <h3 class="product">Описание товара</h3>
         <br>
@@ -69,10 +55,5 @@
             <p class="little">Основой ежедневного рациона питания могут стать любые популярные корма в сухом, замороженном и живом виде. Кроме того, многие производители выпускают специальную линейку кормов для Пецилий.</p>
             <h4>Разведение</h4>
             <p class="little">Половой зрелости достигают к 3–4 месяцам. Самки рождают полностью сформировавшихся мальков в количестве 20–40 штук. Родительские инстинкты не развиты, поэтому молодь необходимо пересаживать в другой аквариум во избежание хищничества. В благоприятных условиях нерест происходит каждые 4–6 недель.</p> <a href="/molinezia/">Моллинезия черная</a>
-            <div class="footer">
-                <h5>Все права защищены &copy; 2019</h5> </div>
-    </div>
-    </div>
-</body>
 
-</html>
+            {% endblock %}
