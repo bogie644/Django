@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import main, contact, catalog, pecilia, molinezia
+from mainapp.views import main, contact, catalog, pecilia, molinezia, neon
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -23,6 +25,10 @@ urlpatterns = [
     path ('contact/', contact),
     path ('catalog/', catalog),
     path ('molinezia/', molinezia),
+    path ('neon/', neon),
     path ('pecilia/', pecilia),
     path ('admin/', admin.site.urls),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
