@@ -15,18 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import main, contact, catalog, pecilia, molinezia, neon
+from mainapp import views as mainapp
+from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path ('', main),
-    path ('contact/', contact),
-    path ('catalog/', catalog),
-    path ('molinezia/', molinezia),
-    path ('neon/', neon),
-    path ('pecilia/', pecilia),
+    path ('', mainapp.main, name='main'),
+    path ('contact/', mainapp.contact, name='contact'),
+    path ('catalog/', mainapp.catalog, name='catalog'),
+    path ('molinezia/', mainapp.molinezia, name='molinezia'),
+    path ('neon/', mainapp.neon, name='neon'),
+    path ('pecilia/', mainapp.pecilia, name='pecilia'),
+    path ('auth/', include('authapp.urls', namespace='auth')),
     path ('admin/', admin.site.urls),
 ]
 

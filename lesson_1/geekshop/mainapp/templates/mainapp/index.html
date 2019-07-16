@@ -9,8 +9,20 @@
         <div class="welcom">
             <p>{% now "jS F Y" %}</p>
             <h1>Интернет-магазин АкваФиш</h1>
-            <p>Мы рады приветствовать Вас, {{ username|title }}, на сайте нашего интернет-магазина. Мы откроем Вам красочный подводный мир!</p>
-            </div>
+            {% if request.user.is_authenticated  %}
+            <p>Мы рады приветствовать Вас, {{ request.user.username|title }}, на сайте нашего интернет-магазина. Мы откроем Вам красочный подводный мир!</p>
+            <br>
+            <div class="user_avatar"><img src="/media/{{ user.avatar }}"></div>
+             <a href="{% url "auth:logout" %}">Выйти</a>
+        <br>
+        <a href="{% url "auth:edit" request.user.pk %}">Редактировать профиль</a>
+    {% else %}
+         <p>Мы рады приветствовать Вас, на сайте нашего интернет-магазина. Мы откроем Вам красочный подводный мир!</p>
+        <a href="{% url "auth:login" %}">Войти</a>
+        <br>
+        <a href="{% url "auth:register" %}">Зарегистрироваться</a>
+    {% endif %}
+        </div>
 
 {% endblock %}
         

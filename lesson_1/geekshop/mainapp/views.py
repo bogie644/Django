@@ -3,7 +3,7 @@ from .models import ProductCategory, Product
 
 
 def main(request):
-    return render(request, 'mainapp/index.html', context= {'username': 'антон'})
+    return render(request, 'mainapp/index.html')
 
 def catalog(request):
 
