@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+
+
+{% block title %}
+    <title>Каталог</title>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Продукты</h1>
+    <ul>
+        {% include 'mainapp/includes/inc_category_menu.html' %}
+        <br>
+        {% for product in products %}
+        <div class="block">
+            <img class="product" src={{ product.image.url }} style="width: 470px;">
+            <h3>{{ product.name}}</h3>
+            <p>{{product.category.name}}</p>
+            <a href="{% url 'basket:add' product.pk %}">Добавить в корзину</a>
+            <a href="{% url 'basket:remove' product.pk %}">Удалить из корзины</a>
+        </div>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
