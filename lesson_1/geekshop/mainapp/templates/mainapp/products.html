@@ -1,5 +1,5 @@
 {% extends 'mainapp/base.html' %}
-
+{% load custom_tags %}
 
 {% block title %}
     <title>Каталог</title>
@@ -8,15 +8,25 @@
 {% block content %}
 
     <h1>Продукты</h1>
+    <div>Количество продуктов в корзине: {{ request.user|basket_total_quantity }}</div>
+    <div>Общая стоимость корзины: {{ request.user|basket_total_cost }} руб.</div>
     <ul>
         {% include 'mainapp/includes/inc_category_menu.html' %}
         <br>
         {% for product in products %}
         <div class="block">
             <img class="product" src={{ product.image.url }} style="width: 470px;">
-            <h3>{{ product.name}}</h3>
+            <br>
+            <a href={% if product.name == 'Молинезия черная' %}
+            /molinezia/
+            {% elif product.name == 'Неон голубой' %}
+            /neon/
+            {% elif product.name == 'Пецилия красная' %}
+            /pecilia/
+            {% endif %}>{{product.name}}</a>
             <p>{{product.category.name}}</p>
             <a href="{% url 'basket:add' product.pk %}">Добавить в корзину</a>
+            <br>
             <a href="{% url 'basket:remove' product.pk %}">Удалить из корзины</a>
         </div>
         {% endfor %}

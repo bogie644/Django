@@ -19,5 +19,5 @@ class BasketSlot(models.Model):
     def get_price(self):
         return self.quantity * self.product.price
 
-    price = property(get_price)
+    cost = property(get_price)
 
