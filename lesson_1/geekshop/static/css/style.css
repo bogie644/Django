@@ -27,12 +27,10 @@ h3 {
     height: 30px;
     border: solid blue;
     text-align: center;
-    display: inline;
     float: left;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: ;
     background-color: rgba(250,250,250,0.4)
 }
 
@@ -138,12 +136,12 @@ td {
     text-align: center
 }
 
-img {
+img.product {
     padding: 6px;
-    background-color: chocolate;
+    background-color: coral;
 }
 
-img:hover {
+img.product:hover {
     background-color: #f8f8f8;
 }
 
@@ -225,4 +223,20 @@ img:hover {
 
 .karta {
   position: relative;
+}
+
+.menu {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+
+.item {
+    margin: 5px;
+}
+
+.active-menu {
+    background-color: yellow;
 }
